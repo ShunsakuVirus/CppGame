@@ -16,18 +16,18 @@ int main() {
 	while (env.isOpen()) {
 		env.begin();
 
-		Vec2f a(0, 0);           // 加速度
+		Vec2f a(0, 0);
 
 
 		if (pos.y() < 0) {
 			if (env.isKeyPushed(' ')) {
-				a += Vec2f(0, 10);   // ジャンプ時の加速度
+				a += Vec2f(0, 10);
 			}
 			a += Vec2f(0, 0.2F);
 		}
 		if (pos.y() > 0) {
 			if (env.isKeyPushed(' ')) {
-				a += Vec2f(0, -10);   // ジャンプ時の加速度
+				a += Vec2f(0, -10);
 			}
 			a += Vec2f(0, -0.2F);
 		}
@@ -39,10 +39,10 @@ int main() {
 		if (env.isKeyPressing('D')) {
 			a += Vec2f(0.5F, 0);
 		}
-		a += v * -0.05F;         // 空気抵抗
+		a += v * -0.05F;
 
-		v += a;                  // 速度
-		pos += v + 0.5F * a;     //位置の計算
+		v += a;
+		pos += v + 0.5F * a;
 
 		drawPoint(pos.x(), pos.y(), 16, Color(0, 1, 0));
 
