@@ -1,25 +1,12 @@
-﻿//
-// たくさん出す
-//
-
-// Frameworkの全てをインクルード
 #include "lib/framework.hpp"
 #include <ctime> // C++標準ライブラリの時計を使用
 
-
-// アプリのウインドウサイズ
 enum Size {
 	WIDTH = 800,
 	HEIGHT = 800
 };
 
-//
-// メインプログラム
-//
 int main() {
-	// アプリウインドウを生成
-	// GLFWとOpenGLの初期化
-	// TIPS:色々な型が依存しているので、最初に生成する事
 	AppEnv env(Size::WIDTH, Size::HEIGHT);
 	Random random;
 	random.setSeed(std::time(nullptr));
@@ -58,7 +45,7 @@ int main() {
 				y[i] += yDic;
 				if (x[i] > WIDTH / 2 || x[i] < WIDTH / -2) { xDic *= -1; }
 				if (y[i] > HEIGHT / 2 || y[i] < HEIGHT / -2) { yDic *= -1; }
-			// 終了
+			
 		}
 	env.end();
 	}
