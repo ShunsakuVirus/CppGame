@@ -18,7 +18,7 @@ int main() {
 
 		Vec2f a(0, 0);     //
 		if (env.isKeyPushed(' ')) {
-			a += Vec2f(0, 10);     //jump
+			a += Vec2f(0, 10);
 		}
 		if (env.isKeyPushed('D')) {
 			a += Vec2f(10, 0);
