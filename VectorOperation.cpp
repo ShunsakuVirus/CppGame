@@ -3,7 +3,6 @@ enum Size {
   WIDTH  = 800,
   HEIGHT = 600
 };
-//外積で法線を出して、内積で光の強さを設定する
 
 int main() {
   AppEnv env(Size::WIDTH, Size::HEIGHT);
