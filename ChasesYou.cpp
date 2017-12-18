@@ -19,19 +19,16 @@ int main() {
 
 		Vec2f mpos = env.mousePosition();
 		{
-			//敵から自分へ伸びるベクトル
 			float ax = mpos.x() - x;
 			float ay = mpos.y() - y;
 
 			float len = std::sqrt(ax *ax + ay*ay);
 			ax = ax / len;
 			ay = ay / len;
-
-			//敵の正面方向へ伸びるベクトル
+			
 			float bx = 0;
 			float by = 1;
-
-			//敵の向きに合わせて回転
+			
 			float sin_t = std::sin(r);
 			float cos_t = std::cos(r);
 
@@ -40,9 +37,8 @@ int main() {
 
 			float dot = ax * rbx + ay * rby;
 
-			//外積を計算
 			float cross = ay * rbx - ax * rby;
-			//外積の正負で向きを変える
+			
 			if (dot > 0.9) {
 				if (cross > 0) {
 					r += 0.1;
